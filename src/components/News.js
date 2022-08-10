@@ -11,6 +11,10 @@ const News = (props) => {
   const [page, setpage] = useState(1)
   const [totalResults, settotalResults] = useState(0)
 
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
   const updateNews = async () => {
     props.setProgress(10)
     //https://newsapi.org/v2/top-headlines/sources?country=usapiKey=API_KEY
@@ -38,6 +42,8 @@ const News = (props) => {
     document.title = `${props.category}- NewsMonkey`
 
     updateNews()
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // const handlePreviousClick = async () => {
@@ -73,7 +79,7 @@ const News = (props) => {
         className="text-center"
         style={{ margin: '40px 0px', marginTop: '90px' }}
       >
-        NewsMonkey - Top Highlights from {props.category}
+        NewsMonkey - Top Highlights from {capitalizeFirstLetter(props.category)}
       </h1>
       {loading && <Spinner />}
       <InfiniteScroll

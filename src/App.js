@@ -20,19 +20,21 @@ const App = () => {
         />
         <Routes>
           <Route
-            path="/"
+            exact
+            path="/general"
             element={
               <News
                 setProgress={setprogress}
-                key={'home'}
+                key={'gen'}
                 pageSize={7}
                 country="in"
-                category="home"
+                category="general"
               />
             }
           />
 
           <Route
+            exact
             path="/business"
             element={
               <News
@@ -45,6 +47,7 @@ const App = () => {
             }
           />
           <Route
+            exact
             path="/entertainment"
             element={
               <News
@@ -58,7 +61,7 @@ const App = () => {
           />
           {/* <Route
              
-            path="/general"
+            exact path="/general"
             element={
               <News
                 setProgress={setprogress}
@@ -70,6 +73,7 @@ const App = () => {
             }
           /> */}
           <Route
+            exact
             path="/health"
             element={
               <News
@@ -82,6 +86,7 @@ const App = () => {
             }
           />
           <Route
+            exact
             path="/science"
             element={
               <News
@@ -94,11 +99,12 @@ const App = () => {
             }
           />
           <Route
+            exact
             path="/sports"
             element={
               <News
                 setProgress={setprogress}
-                key={"sports"}
+                key={'sports'}
                 pageSize={7}
                 country="in"
                 category="sports"
@@ -106,6 +112,7 @@ const App = () => {
             }
           />
           <Route
+            exact
             path="/technology"
             element={
               <News
